@@ -13,11 +13,17 @@
       <div class="nav-bar"></div>
       <div class="product">
         <div class="product-image">
-          <a :href="link"><img v-bind:src="image" /></a>
+          <a :href="link"><img v-bind:src="image"/></a>
         </div>
         <div class="product-info">
           <h1>{{ product }}</h1>
           <p>{{ description }}</p>
+          <p v-if="inventory > 10">In Stock</p>
+          <p v-if="inventory >= 10 && inventory > 0">Almost Sold Out!</p>
+          <p v-else>
+            Out of Stock
+            <span v-show="onSale">On Sale, Hurry while stocks last!</span>
+          </p>
         </div>
       </div>
     </div>

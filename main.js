@@ -6,6 +6,8 @@ var app = new Vue({
     product: "Socks",
 	description: "A pair of warm fuzzy socks",
 	image: "./common/socks-green.jpg",
-	link: "https://www.kodiri.com"
+	link: "https://www.kodiri.com",
+	inventory: 0,
+	onSale: true
   }
 });
