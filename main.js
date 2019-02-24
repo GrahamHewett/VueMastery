@@ -10,16 +10,30 @@ var app = new Vue({
 	inventory: 0,
 	onSale: true,
 	details: ['80% cotton', '20% polyester', 'Gender-neutral'],
+	cart: 0,
     variants: [
       {
         variantId: 2234,
-        variantColor: 'green'    
+		variantColor: 'green',
+		variantImage: './common/socks-green.jpg'
       },
       {
         variantId: 2235,
-        variantColor: 'blue'
+		variantColor: 'blue',
+		variantImage: './common/socks-blue.jpg'
       }
     ],
     sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
+  },
+  methods: {
+	addToCart() {
+		this.cart += 1;
+	},
+	updateProduct(variantImage) {
+		this.variantImage = variantImage;
+	},
+	removeFromCart() {
+		this.cart -= 1;
+	}
   }
 });
